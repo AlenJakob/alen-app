@@ -1,0 +1,32 @@
+.bg_blue {
+    background-color: #020B36!important;
+}
+
+.bg_red {
+    background-color: #C03B32;
+}
+
+.bg_skyblue {
+    background-color: #6DB8D2;
+}
+
+.bg_green {
+    background-color: #82C032;
+}
+
+.bg_dark {
+    background-color: #000912;
+}
+
+:root {
+    --bg_dark: #000912;
+    --bg_blue: #020B36;
+    --bg_red: #C03B32;
+    --bg_skyblue: #6DB8D2;
+    --bg_green: #82C032;
+}
+
+.bg_arrow {
+    background-color: #D4EAFF;
+    opacity: 0.2;
+}
