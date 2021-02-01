@@ -25,12 +25,12 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
 .hobbies_header {
-    font-size: 2em;
+  font-size: 2em;
 }
 .hobbies {
-  min-height: 600px;
+  min-height: 300px;
 }
 .hobbies_container {
   display: flex;
@@ -47,5 +47,9 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 </style>

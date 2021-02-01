@@ -5,6 +5,7 @@
     <Summary />
     <Carousel />
     <Hobbies />
+    <Footer />
   </div>
 </template>
 
@@ -33,6 +34,7 @@ import AboutMe from "@/components/pages/About_me";
 import Summary from "@/components/pages/Summary";
 import Carousel from "@/components/Carousel";
 import Hobbies from "@/components/Hobbies";
+import Footer from "@/components/Footer";
 export default {
   components: {
     Navbar,
@@ -40,6 +42,7 @@ export default {
     Summary,
     Carousel,
     Hobbies,
+    Footer,
   },
 };
 </script>
