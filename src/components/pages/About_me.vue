@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="about_me">
+    <div class="about_me bg_blue">
       <div class="about_content ml-2 mt-2">
         <p>Hello there,</p>
         <p>I'm <a class="underline">Alen Jakob</a></p>
@@ -29,7 +29,6 @@ export default {
   position: relative;
   height: calc(100vh - 100px - 2rem);
   height: 350px;
-  background: #020b36;
 
   z-index: 1;
   &::before {

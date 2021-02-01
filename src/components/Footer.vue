@@ -22,15 +22,22 @@
       <div class="footer_bottom_bg"></div>
     </div>
     <div class="footer_bottom">
-      <h2>Created By</h2>
-      <h2>XYZ</h2>
       <h2>2021</h2>
+      <h2>Created By</h2>
+      <h2>Alen Jakob</h2>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      colorStatus: "blue",
+      colorStatusList: ["bg_blue", "bg_green", "bg_skyblue", "bg_red"],
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -42,6 +49,7 @@ export default {};
   position: relative;
 }
 .footer_mountain {
+  margin-bottom: -1px;
   position: relative;
   min-height: 157px;
   background-image: url("~@/assets/footer_mountain_1.svg");
@@ -64,7 +72,7 @@ export default {};
   min-height: 159px;
   min-height: 176px;
   background-image: url("~@/assets/Group 140.svg");
-  opacity: 0.055;
+  opacity: 0.053;
   background-repeat: no-repeat;
   background-size: contain;
   top: 0;
@@ -94,7 +102,7 @@ export default {};
   bottom: 1rem;
   right: 1rem;
   z-index: 15;
-  color: rgb(170, 170, 170);
+  color: #4a4a4a;
   &.ico {
     margin-right: 0.5rem;
   }
@@ -109,6 +117,8 @@ export default {};
   text-decoration: none;
 }
 .footer_bottom {
+  line-height: 1.5;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -116,8 +126,20 @@ export default {};
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0 0 3px rgb(199, 199, 199);
+  & h2:nth-child(1) {
+    color: rgb(49, 49, 49);
+    font-weight: bold;
+  }
+  & h2:nth-child(2) {
+    color: rgb(70, 70, 70);
+  }
+  & h2:nth-child(3) {
+    box-sizing: inherit;
+    color: #3298dc;
+    font-weight: bold;
+  }
   & h2 {
-    margin: 10px;
+    margin: 2px;
   }
 }
 </style>

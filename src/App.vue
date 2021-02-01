@@ -20,7 +20,7 @@ body {
 }
 #app {
   font-family: "Segoe UI", "Roboto", Tahoma, Verdana, sans-serif;
-
+overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

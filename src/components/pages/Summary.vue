@@ -7,7 +7,7 @@
       <div class="summary_article mt-2 ml-2">
         Front-end and web graphics passionate, I have made a career shift
         towards creating websites and applications with the use of HTML5, CSS3,
-        Javascript, and Vue. I dedicatetd last 3 years to prepare myself for the
+        Javascript, and Vue. I dedicated last 3 years to prepare myself for the
         new profession by taking over 20 onli ne courses and creating websites
         for my portfolio. With over 8 years of international work experience. I
         am convinced that my skills are enough to apply for this position.
