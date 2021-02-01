@@ -9,6 +9,5 @@ export default {};
 <style>
 .carousel {
   height: 600px;
-  min-width: 860px;
 }
 </style>
