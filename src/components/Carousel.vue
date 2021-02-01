@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  components: {},
+};
 </script>
 
 <style>
@@ -11,3 +13,5 @@ export default {};
   height: 600px;
 }
 </style>
+
+
