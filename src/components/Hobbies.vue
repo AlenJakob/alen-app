@@ -1,6 +1,6 @@
 <template>
   <div class="hobbies">
-    <div class="hobbies_header mb-3">HOBBIES</div>
+    <div class="hobbies_header mt-3 mb-3">HOBBIES</div>
     <div class="hobbies_container">
       <div class="hobbies_item bg_blue">
         <i class="fas fa-biking fa-2x"></i>
