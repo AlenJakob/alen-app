@@ -38,7 +38,6 @@ export default {
   width: 100%;
   justify-content: space-around;
 }
-
 .nav_links {
   align-items: center;
   justify-content: flex-end;
