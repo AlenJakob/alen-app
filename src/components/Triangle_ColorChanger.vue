@@ -1,10 +1,9 @@
 <template>
   <div>
-    <blueTriangle />
-    <skyblueTriangle />
-
-    <greenTriangle />
-    <redTriangle />
+    <skyblueTriangle v-if="getColor == 'skyblue'" />
+    <greenTriangle v-if="getColor == 'green'" />
+    <redTriangle v-if="getColor == 'red'" />
+    <blueTriangle v-if="getColor == 'blue'" />
   </div>
 </template>
 
@@ -19,6 +18,18 @@ export default {
     blueTriangle,
     greenTriangle,
     skyblueTriangle,
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    getColor() {
+      return this.$store.state.colorState;
+    },
+  },
+  methods: {},
+  mounted() {
+    console.log(this.$store.state.colorState);
   },
 };
 </script>

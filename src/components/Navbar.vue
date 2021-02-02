@@ -7,7 +7,9 @@
         <li>About me</li>
         <li>Projects</li>
         <li>Contact</li>
-        <li class="color_changer mr-2 ml-1"><Triangle /></li>
+        <li @click.prevent="colorHandler()" class="color_changer mr-2 ml-1">
+          <Triangle />
+        </li>
       </ul>
     </nav>
   </div>
@@ -20,6 +22,24 @@ export default {
   components: {
     Logo,
     Triangle,
+  },
+  data() {
+    return {
+      colorCounter: 0,
+      setColor: "",
+      colorList: ["red", "green", "blue", "skyblue"],
+    };
+  },
+  methods: {
+    colorHandler() {
+      this.colorCounter === 3 ? (this.colorCounter = 0) : this.colorCounter++;
+
+      this.$store.dispatch("updateColor", this.colorList[this.colorCounter]);
+    },
+    sendData() {},
+  },
+  mounted() {
+    console.log(this.$store.state.colorState);
   },
 };
 </script>
