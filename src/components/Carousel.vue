@@ -1,10 +1,13 @@
 <template>
-  <hooper class="carousel bg_blue mb-8" :itemsToShow="1" :centerMode="true">
-    <slide>
-      <div class="bg"></div>
-      slide 1
+  <hooper
+    class="carousel bg_blue mb-8"
+    style="height: 400px"
+    :itemsToShow="1"
+    :centerMode="true"
+  >
+    <slide v-for="(img, id) in images" :key="id">
+      <div class="bg" :style="{ backgroundImage: 'url(' + img + ')' }"></div>
     </slide>
-    <slide> slide 2 </slide>
     <hooper-pagination slot="hooper-addons"></hooper-pagination>
   </hooper>
 </template>
@@ -17,15 +20,22 @@ export default {
     Slide,
     HooperPagination,
   },
+  data() {
+    return {
+      images: [
+        "https://cdn.pixabay.com/photo/2021/01/27/13/47/cliff-5954980_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2020/09/29/23/38/team-5614157_1280.png",
+      ],
+    };
+  },
 };
 </script>
 
 <style>
 .bg {
-  width:100%;
+  width: 100%;
   height: 200px;
-  background: url("https://cdn.pixabay.com/photo/2020/09/29/23/38/team-5614157_1280.png")
-    no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
