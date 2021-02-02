@@ -112,7 +112,8 @@ export default {
   }
   &_content {
     margin: 1rem 0;
-    font-size: 1.3em;
+    margin-right: 1rem;
+    font-size: 1.2em;
   }
 }
 
@@ -125,6 +126,8 @@ export default {
 }
 
 .bg {
+  margin-right: 1rem;
+  box-shadow: 2px 0px 5px rgba(53, 53, 53, 0.562);
   transform: translate(30px, -30px);
   width: 100%;
   max-width: 50%;
