@@ -5,17 +5,27 @@
     :itemsToShow="1"
     :centerMode="true"
   >
-    <slide class="slide" v-for="(img, id) in images" :key="id">
-      <div class="bg" :style="{ backgroundImage: 'url(' + img + ')' }"></div>
+    <slide class="slide" v-for="(project, id) in projects" :key="id">
+      <div
+        class="bg"
+        :style="{ backgroundImage: 'url(' + project.image + ')' }"
+      ></div>
       <div class="txt">
-        <h2 class="txt_header">Title project</h2>
+        <h2 class="txt_header">{{ project.title }}</h2>
         <div class="divider"></div>
         <div class="tech_list">
           <ul class="list">
-            <li class="list_btn bg_red">JavaScript</li>
-            <li class="list_btn bg_skyblue">JavaScript</li>
+            <li
+              class="list_btn bg_red"
+              v-for="tech in project.technologies"
+              :key="tech.id"
+              :class="getClass(tech)"
+            >
+              {{ tech }}
+            </li>
+            <!-- <li class="list_btn bg_skyblue">JavaScript</li>
             <li class="list_btn bg_dark">JavaScript</li>
-            <li class="list_btn bg_green">JavaScript</li>
+            <li class="list_btn bg_green">JavaScript</li> -->
           </ul>
         </div>
         <p class="txt_content">
@@ -44,12 +54,117 @@ export default {
   },
   data() {
     return {
+      colorTechStatus: [],
       images: [
         "https://cdn.pixabay.com/photo/2021/01/27/13/47/cliff-5954980_960_720.jpg",
         "https://cdn.pixabay.com/photo/2020/09/29/23/38/team-5614157_1280.png",
         "https://cdn.pixabay.com/photo/2020/12/16/18/57/road-5837403_960_720.jpg",
       ],
+      projects: [
+        {
+          id: 1,
+          title: "Landing Page Polygon Images",
+          content:
+            "Simple Landing Page builded from scratch using vanilla JavaScript",
+          image: "https://i.ibb.co/qyNmqTg/landing-pagepolygon-1.png",
+          creator: "Alen Jakob",
+          technologies: ["JavaScript", "Jquery", "HTML5", "CSS3"],
+          sourceLink: "https://github.com/AlenJakob/landing-page",
+          projectLink: "https://landing-pagepolygon.web.app",
+          date: "2018-04-18",
+        },
+        {
+          id: 2,
+          title: "Music Website",
+          content:
+            "Website created from scratch, Color changer mode & full responsive design.",
+          image: "https://i.ibb.co/Wybgvxx/music-web.png",
+          creator: "Alen Jakob",
+          technologies: ["JavaScript", "HTML5", "CSS3", "SASS", "Rwd"],
+          sourceLink: "https://github.com/AlenJakob/Music-web",
+          projectLink: "https://music-web-c59b4.web.app",
+          date: "2018-09-11",
+        },
+        {
+          id: 3,
+          title: "Web Service Development",
+          content:
+            "Website offer a full service for creating a website's , Landing page ,business website.",
+          image: "https://i.ibb.co/wgBwhbq/web-services.png",
+          creator: "Alen Jakob",
+          technologies: ["HTML5", "CSS3", "Bulma", "VueJs", "JavaScript"],
+          sourceLink: "https://github.com/AlenJakob/frelance-web",
+          projectLink: "https://web-services-802a4.web.app",
+          date: "2020-09-05",
+        },
+        {
+          id: 4,
+          title: "Vanilla JavaScript Bicycle Cards",
+          content:
+            "Website offers & displays Bicycles. The Bicycles can be sorted by price lowest to highest and highest to lowest or between to given value's.",
+          image: "https://i.ibb.co/0BbJ7gJ/bicycle-product.png",
+          creator: "Alen Jakob",
+          technologies: ["HTML5", "CSS3", "Bulma", "Rwd", "JavaScript"],
+          sourceLink: "https://github.com/AlenJakob/vanilla-js-cards",
+          projectLink: "https://bicycle-product.web.app",
+          date: "2020-10-25",
+        },
+        {
+          id: 5,
+          title: "Serial - Number checker",
+          content:
+            "The warranty software which help customer to check the period of warranty( full information ) , how many months had passed from the production date to the current date.",
+          image: "https://i.ibb.co/xYkP2Cr/bafang-warranty-web-app.png",
+          creator: "Alen Jakob",
+          technologies: ["HTML5", "CSS3", "Bulma", "Rwd", "JavaScript"],
+          sourceLink: "https://github.com/AlenJakob/serialno-checker",
+          projectLink: "https://bafang-warranty.web.app",
+          date: "2020-07-21",
+        },
+        {
+          id: 6,
+          title: "Contact Form",
+          content:
+            "The contact form is working with firebase, last time added an option to read all messages after login the user the messages will be displayed bottom of the website that we are able to delete , the option is set for testing purpose.",
+          image: "https://i.ibb.co/vXrdv5m/contact-form.png",
+          creator: "Alen Jakob",
+          technologies: ["HTML5", "CSS3", "Bulma", "JavaScript", "Firebase"],
+          sourceLink: "https://github.com/AlenJakob/form-snippet",
+          projectLink: "https://contact-form-ef310.web.app",
+          date: "2020-11-07",
+        },
+      ],
     };
+  },
+  methods: {
+    getClass(property) {
+      switch (property) {
+        case "JavaScript":
+          return "bg_green";
+          break;
+        case "Bulma":
+          return "bg_blue";
+          break;
+        case "Jquery":
+          return "bg_blue";
+          break;
+        case "CSS3":
+          return "bg_skyblue";
+          break;
+        case "HTML5":
+          return "bg_red";
+          break;
+        case "Firebase":
+          return "bg_orange";
+          break;
+        case "SASS":
+          return "bg_purple";
+          break;
+        default:
+          return "bg_red";
+          break;
+      }
+    },
   },
 };
 </script>
@@ -116,7 +231,6 @@ export default {
     font-size: 1.2em;
   }
 }
-
 .slide {
   display: flex;
   flex-direction: row;
