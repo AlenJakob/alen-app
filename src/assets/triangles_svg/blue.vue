@@ -8,12 +8,12 @@
   >
     <path
       d="M1.73444 18L11 1.99586L20.2656 18L1.73444 18Z"
-      stroke="#020b36"
+      stroke="royalblue"
       stroke-width="2"
     />
     <path
       d="M11 5.99999L17 16L5 16L11 5.99999Z"
-      fill="#020b36"
+      fill="royalblue"
       fill-opacity="0.5"
     />
   </svg>

@@ -63,7 +63,7 @@ export default {
   justify-content: flex-end;
   width: 100%;
   & li {
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -76,13 +76,22 @@ export default {
       background: #82c032;
     }
     &:last-child {
+      transition: 0.3s;
       width: 30px;
       height: 30px;
       border: 1px solid transparent;
+      display: flex;
+      padding: 2px 3px 5px 3px;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
 
       &:hover {
+        transition: 0.3s;
         background: none;
-        border: 1px solid #82c032;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
       }
     }
   }
