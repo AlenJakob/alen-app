@@ -5,9 +5,31 @@
     :itemsToShow="1"
     :centerMode="true"
   >
-    <slide v-for="(img, id) in images" :key="id">
+    <slide class="slide" v-for="(img, id) in images" :key="id">
       <div class="bg" :style="{ backgroundImage: 'url(' + img + ')' }"></div>
+      <div class="txt">
+        <h2 class="txt_header">Title project</h2>
+        <div class="divider"></div>
+        <div class="tech_list">
+          <ul class="list">
+            <li class="list_btn bg_red">JavaScript</li>
+            <li class="list_btn bg_skyblue">JavaScript</li>
+            <li class="list_btn bg_dark">JavaScript</li>
+            <li class="list_btn bg_green">JavaScript</li>
+          </ul>
+        </div>
+        <p class="txt_content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel at
+          culpa...
+        </p>
+        <ul class="project_buttons">
+          <li class="">View project</li>
+          <li class="bg_dark">Source code</li>
+          <li class="">View</li>
+        </ul>
+      </div>
     </slide>
+
     <hooper-pagination slot="hooper-addons"></hooper-pagination>
   </hooper>
 </template>
@@ -25,23 +47,93 @@ export default {
       images: [
         "https://cdn.pixabay.com/photo/2021/01/27/13/47/cliff-5954980_960_720.jpg",
         "https://cdn.pixabay.com/photo/2020/09/29/23/38/team-5614157_1280.png",
+        "https://cdn.pixabay.com/photo/2020/12/16/18/57/road-5837403_960_720.jpg",
       ],
     };
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+.project_buttons {
+  display: flex;
+  margin-top: 2rem;
+  & li {
+    transition: 0.1s;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 0.3rem 0.4rem;
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+  & li:nth-child(1) {
+    margin-right: 8px;
+    border: 1px solid rgb(35, 12, 119);
+  }
+  & li:nth-child(2) {
+    margin-right: 8px;
+    color: #fff;
+    border: 1px solid transparent;
+    &:hover {
+      background: white;
+      color: black;
+      border: 1px solid rgb(35, 12, 119);
+    }
+  }
+  & li:nth-child(3) {
+    margin-right: 15px;
+    border: 1px solid rgb(35, 12, 119);
+  }
+}
+.list {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  & .list_btn {
+    padding: 5px;
+    color: #fff;
+    font-size: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+  }
+}
+.carousel {
+  height: 860px;
+}
+.txt {
+  width: calc(100% - 1rem);
+  padding: 1rem;
+  margin-left: 2rem;
+  text-align: left;
+  &_header {
+    font-size: 2rem;
+  }
+  &_content {
+    margin: 1rem 0;
+    font-size: 1.3em;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background: #fff;
+  border: 3rem solid #020b36;
+}
+
 .bg {
+  transform: translate(30px, -30px);
   width: 100%;
-  height: 200px;
+  max-width: 50%;
+  height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.carousel {
-  height: 600px;
-}
+
 .hooper {
   position: relative;
   box-sizing: border-box;
@@ -143,16 +235,16 @@ export default {
 }
 .hooper-indicator:hover,
 .hooper-indicator.is-active {
-  background-color: #4285f4;
+  background-color: #fff;
 }
 .hooper-indicator {
-  margin: 0 2px;
-  width: 12px;
-  height: 4px;
-  border-radius: 4px;
+  margin: 15px 5px;
+  width: 40px;
+  height: 8px;
+  border-radius: 1px;
   border: none;
   padding: 0;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 .hooper-pagination.is-vertical {
