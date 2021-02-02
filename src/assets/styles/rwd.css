@@ -1,0 +1,11 @@
+@media screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+  .nav_links li {
+    display: none !important;
+  }
+  .nav_links li:last-child {
+    display: block !important;
+  }
+}

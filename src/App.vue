@@ -10,6 +10,7 @@
 </template>
 
 <style lang="scss">
+@import "./assets/styles/rwd.css";
 @import "./assets/styles/reset.css";
 @import "./assets/styles/main.css";
 @import "./assets/styles/colorBackgrounds.css";
@@ -20,7 +21,7 @@ body {
 }
 #app {
   font-family: "Segoe UI", "Roboto", Tahoma, Verdana, sans-serif;
-overflow: hidden;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

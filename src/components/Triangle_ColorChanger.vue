@@ -1,22 +1,26 @@
 <template>
-  <svg
-    width="22"
-    height="19"
-    viewBox="0 0 22 19"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M1.73444 18L11 1.99586L20.2656 18L1.73444 18Z"
-      stroke="#82C032"
-      stroke-width="2"
-    />
-    <path d="M11 6L17 16L5 16L11 6Z" fill="#82C032" fill-opacity="0.5" />
-  </svg>
+  <div>
+    <blueTriangle />
+    <skyblueTriangle />
+
+    <greenTriangle />
+    <redTriangle />
+  </div>
 </template>
 
 <script>
-export default {};
+import redTriangle from "@/assets/triangles_svg/red";
+import blueTriangle from "@/assets/triangles_svg/blue";
+import greenTriangle from "@/assets/triangles_svg/green";
+import skyblueTriangle from "@/assets/triangles_svg/skyblue";
+export default {
+  components: {
+    redTriangle,
+    blueTriangle,
+    greenTriangle,
+    skyblueTriangle,
+  },
+};
 </script>
 
 <style>
