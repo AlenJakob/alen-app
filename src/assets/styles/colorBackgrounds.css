@@ -6,23 +6,38 @@
   background-color: #c03b32;
 }
 
+.bg_darkred {
+  background-color: #71211b;
+}
+
 .bg_skyblue {
   background-color: #6db8d2;
+}
+
+.bg_darkskyblue {
+  background-color: #296d84;
 }
 
 .bg_green {
   background-color: #82c032;
 }
 
+.bg_darkgreen {
+  background-color: #386300;
+}
+
 .bg_dark {
   background-color: #000912;
 }
+
 .bg_orange {
   background-color: #f58200;
 }
+
 .bg_purple {
   background-color: #c69;
 }
+
 :root {
   --bg_dark: #000912;
   --bg_blue: #020b36;

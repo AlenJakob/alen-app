@@ -3,10 +3,10 @@
     <nav class="navigation dp_flex">
       <div class="logo dp_flex ml-2"><Logo /></div>
 
-      <ul class="nav_links dp_flex">
-        <li>About me</li>
-        <li>Projects</li>
-        <li>Contact</li>
+      <ul class="nav_links dp_flex" >
+        <li :class="setClass">About me</li>
+        <li :class="setClass">Projects</li>
+        <li :class="setClass">Contact</li>
         <li @click.prevent="colorHandler()" class="color_changer mr-2 ml-1">
           <Triangle />
         </li>
@@ -26,20 +26,29 @@ export default {
   data() {
     return {
       colorCounter: 0,
-      setColor: "",
-      colorList: ["red", "green", "blue", "skyblue"],
+      setColor: "red",
+      colorList: ["red", "skyblue", "green", "blue"],
     };
   },
   methods: {
     colorHandler() {
       this.colorCounter === 3 ? (this.colorCounter = 0) : this.colorCounter++;
-
       this.$store.dispatch("updateColor", this.colorList[this.colorCounter]);
+      this.updateState();
+      console.log("this set color", this.setColor);
     },
-    sendData() {},
+    updateState() {
+      this.setColor = this.$store.state.colorState;
+    },
+  },
+  computed: {
+    setClass() {
+      return this.setColor;
+    },
   },
   mounted() {
-    console.log(this.$store.state.colorState);
+    // console.log(this.$store.state.colorState);
+    console.log(this.setColor, "setColor");
   },
 };
 </script>
@@ -71,10 +80,7 @@ export default {
     width: 105px;
     height: 38px;
     line-height: 2px;
-    &:hover {
-      transition: 0.2s;
-      background: #82c032;
-    }
+
     &:last-child {
       transition: 0.3s;
       width: 30px;
@@ -95,5 +101,21 @@ export default {
       }
     }
   }
+}
+.blue:hover {
+  transition: 0.2s;
+  background: #20338f;
+}
+.skyblue:hover {
+  transition: 0.2s;
+  background: #3794b5;
+}
+.green:hover {
+  transition: 0.2s;
+  background: #82c032;
+}
+.red:hover {
+  transition: 0.2s;
+  background: #C03B32; 
 }
 </style>

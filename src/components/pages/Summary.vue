@@ -3,7 +3,7 @@
     <div class="summary_content">
       <div class="summary_info">About me</div>
       <div class="summary_avatar"></div>
-      <h2 class="summary_header mt-2 ml-2">My Name Is Alen Jakob</h2>
+      <div class="mt-2 ml-2 pb-2">My name is<h2 class="summary_header ">Alen Jakob</h2></div>
       <div class="summary_article mt-2 ml-2">
         Front-end and web graphics passionate, I have made a career shift
         towards creating websites and applications with the use of HTML5, CSS3,
@@ -74,6 +74,8 @@ export default {
   min-height: 300px;
   overflow: hidden;
   line-height: 22px;
+  position: relative;
+  z-index: 10;
 }
 .summary_image {
   position: absolute;

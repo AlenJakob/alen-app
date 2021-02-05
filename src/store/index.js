@@ -5,17 +5,21 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    colorState: "blue",
+    colorState: "red",
+    bgColor: "bg_red"
   },
   mutations: {
     updateColor(state, color) {
       state.colorState = color;
+    }, updateColorBg(state, color) {
+      state.bgColor = color;
     },
   },
   actions: {
     updateColor({ commit }, payload) {
-      console.log(payload)
       commit("updateColor", payload);
+    }, updateColorBg({ commit }, payload) {
+      commit("updateColorBg", payload);
     },
   },
   modules: {},

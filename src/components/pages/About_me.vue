@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="about_me bg_blue">
+    <div class="about_me" :class="getColorBg">
       <div class="about_content ml-2 mt-2">
         <p>Hello there,</p>
         <p>I'm <a class="underline">Alen Jakob</a></p>
@@ -16,6 +16,28 @@ import Arrow from "@/components/Arrow";
 export default {
   components: {
     Arrow,
+  },
+  computed: {
+    getColorBg() {
+      //  this.$store.state.bgColor
+      switch (this.$store.state.colorState) {
+        case "red":
+          return "bg_darkred";
+          break;
+        case "skyblue":
+          return "bg_darkskyblue";
+          break;
+        case "green":
+          return "bg_darkgreen";
+          break;
+        case "blue":
+          return "bg_blue";
+          break;
+        default:
+          return "bg_dark";
+        // fall-through
+      }
+    },
   },
 };
 </script>

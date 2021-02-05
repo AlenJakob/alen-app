@@ -1,18 +1,22 @@
 <template>
   <div class="footer_container">
-    <div class="footer_mountain">
-      <div class="footer_icons ml-2">
-        <div class="ico ico-linkedin">
-          <i class="fab fa-linkedin fa-2x"></i>
-          <h2>Linkedin</h2>
-        </div>
-        <div class="ico ico-github">
-          <i class="fab fa-github-alt fa-2x"></i>
-          <h2>Github</h2>
-        </div>
+    <div class="footer_mountain" :class="getColorBg">
+      <div class="footer_icons">
+        <a href="https://www.linkedin.com/in/alen-jakob">
+          <div class="ico ico-linkedin">
+            <i class="fab fa-linkedin fa-2x"></i>
+            <h2>Linkedin</h2>
+          </div></a
+        >
+        <a href="https://github.com/AlenJakob"
+          ><div class="ico ico-github">
+            <i class="fab fa-github-alt fa-2x"></i>
+            <h2>Github</h2>
+          </div></a
+        >
       </div>
     </div>
-    <div class="footer bg_blue">
+    <div class="footer" :class="getColorBg">
       <div class="footer_email">
         <a class="footer_email_link" href="mailto:alenjakob@gmail.com">
           <i class="ico fas fa-at fa-2x"></i>alenjakob@gmail.com</a
@@ -37,6 +41,29 @@ export default {
       colorStatusList: ["bg_blue", "bg_green", "bg_skyblue", "bg_red"],
     };
   },
+
+  computed: {
+    getColorBg() {
+      //  this.$store.state.bgColor
+      switch (this.$store.state.colorState) {
+        case "red":
+          return "bg_darkred";
+          break;
+        case "skyblue":
+          return "bg_darkskyblue";
+          break;
+        case "green":
+          return "bg_darkgreen";
+          break;
+        case "blue":
+          return "bg_blue";
+          break;
+        default:
+          return "bg_dark";
+        // fall-through
+      }
+    },
+  },
 };
 </script>
 
@@ -49,19 +76,21 @@ export default {
   position: relative;
 }
 .footer_mountain {
-  margin-bottom: -1px;
   position: relative;
-  min-height: 157px;
-  background-image: url("~@/assets/footer_mountain_1.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // // background-image: url("~@/assets/footer_mountain_1.svg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 .footer_bottom_bg {
   position: absolute;
   min-width: 860px;
   min-height: 159px;
   min-height: 176px;
-  background-image: url("~@/assets/footer_mountain_2.svg");
+  background-image: url("~@/assets/footer_mountain_bottom.svg");
   background-repeat: no-repeat;
   background-size: contain;
   bottom: 0;
@@ -78,8 +107,6 @@ export default {
   top: 0;
 }
 .footer_icons {
-  bottom: 2rem;
-  position: absolute;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;

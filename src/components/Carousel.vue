@@ -1,9 +1,13 @@
 <template>
   <hooper
     class="carousel bg_blue mb-8"
-    style="height: 400px"
+    style="height: 100vh"
     :itemsToShow="1"
     :centerMode="true"
+    :autoPlay="true"
+    :playSpeed="6000"
+    :infiniteScroll="true"
+    :wheelControl="false"
   >
     <slide class="slide" v-for="(project, id) in projects" :key="id">
       <div
@@ -23,19 +27,14 @@
             >
               {{ tech }}
             </li>
-            <!-- <li class="list_btn bg_skyblue">JavaScript</li>
-            <li class="list_btn bg_dark">JavaScript</li>
-            <li class="list_btn bg_green">JavaScript</li> -->
           </ul>
         </div>
         <p class="txt_content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel at
-          culpa...
+          {{ project.content }}
         </p>
         <ul class="project_buttons">
-          <li class="">View project</li>
-          <li class="bg_dark">Source code</li>
-          <li class="">View</li>
+          <li class=""><a :href="project.projectLink">View project</a></li>
+          <li class="bg_dark"><a :href="project.sourceLink">Source code</a></li>
         </ul>
       </div>
     </slide>
@@ -89,7 +88,7 @@ export default {
           id: 3,
           title: "Web Service Development",
           content:
-            "Website offer a full service for creating a website's , Landing page ,business website.",
+            "Website offer a full service for creating a website's, Landing page, business website.",
           image: "https://i.ibb.co/wgBwhbq/web-services.png",
           creator: "Alen Jakob",
           technologies: ["HTML5", "CSS3", "Bulma", "VueJs", "JavaScript"],
@@ -113,7 +112,7 @@ export default {
           id: 5,
           title: "Serial - Number checker",
           content:
-            "The warranty software which help customer to check the period of warranty( full information ) , how many months had passed from the production date to the current date.",
+            "The warranty software which help customer to check the period of warranty('full information'), how many months had passed from the production date to the current date.",
           image: "https://i.ibb.co/xYkP2Cr/bafang-warranty-web-app.png",
           creator: "Alen Jakob",
           technologies: ["HTML5", "CSS3", "Bulma", "Rwd", "JavaScript"],
@@ -125,7 +124,7 @@ export default {
           id: 6,
           title: "Contact Form",
           content:
-            "The contact form is working with firebase, last time added an option to read all messages after login the user the messages will be displayed bottom of the website that we are able to delete , the option is set for testing purpose.",
+            "The contact form is working with firebase, last time added an option to read all messages after login the user the messages will be displayed bottom of the website that we are able to delete, the option is set for testing purpose.",
           image: "https://i.ibb.co/vXrdv5m/contact-form.png",
           creator: "Alen Jakob",
           technologies: ["HTML5", "CSS3", "Bulma", "JavaScript", "Firebase"],
@@ -173,14 +172,21 @@ export default {
 .project_buttons {
   display: flex;
   margin-top: 2rem;
+
   & li {
     transition: 0.1s;
     cursor: pointer;
     border-radius: 3px;
     padding: 0.3rem 0.4rem;
+    & a {
+      color: #000;
+    }
     &:hover {
       background: black;
       color: white;
+      & a {
+        color: #fff;
+      }
     }
   }
   & li:nth-child(1) {
@@ -189,12 +195,18 @@ export default {
   }
   & li:nth-child(2) {
     margin-right: 8px;
-    color: #fff;
+
     border: 1px solid transparent;
+    & a {
+      color: #fff;
+    }
     &:hover {
       background: white;
       color: black;
       border: 1px solid rgb(35, 12, 119);
+      & a {
+        color: #000;
+      }
     }
   }
   & li:nth-child(3) {
@@ -234,9 +246,16 @@ export default {
 .slide {
   display: flex;
   flex-direction: row;
+  flex-direction: column;
   position: relative;
   background: #fff;
   border: 3rem solid #020b36;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    cursor: grabbing;
+  }
 }
 
 .bg {
@@ -436,6 +455,10 @@ export default {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.txt_content {
+  line-height: 1.3em;
+  text-align: justify;
 }
 </style>
 
