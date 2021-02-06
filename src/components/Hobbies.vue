@@ -1,21 +1,21 @@
 <template>
   <div class="hobbies">
     <div class="hobbies_header mt-3 mb-3">HOBBIES</div>
-    <div class="hobbies_container">
-      <div class="hobbies_item bg_blue">
-        <i class="fas fa-biking fa-2x"></i>
+    <div class="hobbies_container ">
+      <div class="hobbies_item bg_blue tooltip " title="I love ride a bike in a summer time">
+        <i class="fas fa-biking fa-2x "></i>
       </div>
-      <div class="hobbies_item bg_red">
+      <div class="hobbies_item bg_red tooltip" title="I love bodyworkout exercises">
         <i class="fas fa-dumbbell fa-2x"></i>
       </div>
-      <div class="hobbies_item bg_skyblue">
+      <div class="hobbies_item bg_skyblue tooltip" title="I'm interesting about computer since mostly Coding & graphic design">
         <i class="fas fa-laptop-code fa-2x"></i>
       </div>
-      <div class="hobbies_item bg_green">
+      <div class="hobbies_item bg_green tooltip" title="I like long walks">
         <i class="fas fa-walking fa-2x"></i>
       </div>
-      <div class="hobbies_item bg_dark">
-        <i class="fas fa-swatchbook fa-2x"></i>
+      <div class="hobbies_item bg_dark tooltip" title="Music is something what make me motivate or rest ;)">
+        <i class="fas fa-headphones-alt fa-2x"></i>
       </div>
     </div>
   </div>
@@ -51,5 +51,26 @@ export default {};
   &:hover {
     opacity: 0.8;
   }
+}
+.tooltip {
+
+  &::before {
+    position: absolute;
+    transform:translateY(-50px);
+    width:auto;
+    z-index: 2;
+    display: none;
+    padding: 10px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    content: attr(title);
+
+  }
+}
+.tooltip:hover::before {
+  display:inline-block;
 }
 </style>

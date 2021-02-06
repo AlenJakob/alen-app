@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    colorState: "red",
+    colorState: "blue",
     bgColor: "bg_red"
   },
   mutations: {

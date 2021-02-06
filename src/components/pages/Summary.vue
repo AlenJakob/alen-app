@@ -3,7 +3,10 @@
     <div class="summary_content">
       <div class="summary_info">About me</div>
       <div class="summary_avatar"></div>
-      <div class="mt-2 ml-2 pb-2">My name is<h2 class="summary_header ">Alen Jakob</h2></div>
+      <div class="mt-1 ml-2 ">
+        <h3 class="header_title">My name is</h3>
+        <h2 class="summary_header">Alen Jakob</h2>
+      </div>
       <div class="summary_article mt-2 ml-2">
         Front-end and web graphics passionate, I have made a career shift
         towards creating websites and applications with the use of HTML5, CSS3,
@@ -26,6 +29,9 @@ export default {
 </script>
 
 <style lang="scss">
+.header_title {
+  padding-bottom: .6rem;
+}
 .summary {
   max-width: 860px;
   margin: 8rem auto;

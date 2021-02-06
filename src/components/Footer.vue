@@ -17,18 +17,18 @@
       </div>
     </div>
     <div class="footer" :class="getColorBg">
-      <div class="footer_email">
-        <a class="footer_email_link" href="mailto:alenjakob@gmail.com">
-          <i class="ico fas fa-at fa-2x"></i>alenjakob@gmail.com</a
-        >
-      </div>
       <div class="footer_middle_bg"></div>
       <div class="footer_bottom_bg"></div>
     </div>
     <div class="footer_bottom">
       <h2>2021</h2>
       <h2>Created By</h2>
-      <h2>Alen Jakob</h2>
+      <h2><a href="">Alen Jakob</a></h2>
+      <h2 class="footer_email">
+        <a class="footer_email_link" href="mailto:alenjakob@gmail.com">
+          alenjakob@gmail.com</a
+        >
+      </h2>
     </div>
   </div>
 </template>
@@ -67,7 +67,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style  lang="scss" >
 .footer {
   position: relative;
   min-height: 186px;
@@ -81,7 +81,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  // // background-image: url("~@/assets/footer_mountain_1.svg");
+  // background-image: url("~@/assets/footer_mountain_1.svg");
   // background-repeat: no-repeat;
   // background-size: cover;
 }
@@ -111,6 +111,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  & a {
+    text-decoration: none;
+  }
 }
 .ico {
   margin: 10px;
@@ -125,24 +128,18 @@ export default {
 }
 
 .footer_email {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  transition: 0.2s;
   z-index: 15;
   color: #4a4a4a;
-  &.ico {
-    margin-right: 0.5rem;
-  }
+
   & a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #b4b5ff;
   }
 }
-.footer_email_link {
-  text-decoration: none;
-}
+
 .footer_bottom {
   line-height: 1.5;
   font-size: 12px;
@@ -150,23 +147,30 @@ export default {
   justify-content: center;
   padding: 2rem;
   background: #fafafa;
+  background-color: #000912;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0 0 3px rgb(199, 199, 199);
   & h2:nth-child(1) {
     color: rgb(49, 49, 49);
-    font-weight: bold;
+    color: #fff;
   }
   & h2:nth-child(2) {
-    color: rgb(70, 70, 70);
+    color: rgb(128, 128, 128);
   }
   & h2:nth-child(3) {
     box-sizing: inherit;
-    color: #3298dc;
     font-weight: bold;
+    & a {
+      color: #b4b5ff;
+    }
+    &:after {
+      content: " ↝ ";
+    }
   }
   & h2 {
     margin: 2px;
+    color: #b9b9b9;
   }
 }
 </style>

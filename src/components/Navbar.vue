@@ -3,15 +3,20 @@
     <nav class="navigation dp_flex">
       <div class="logo dp_flex ml-2"><Logo /></div>
 
-      <ul class="nav_links dp_flex" >
-        <li :class="setClass">About me</li>
-        <li :class="setClass">Projects</li>
-        <li :class="setClass">Contact</li>
+      <ul class="nav_links dp_flex">
+        <li :class="setClass" @click="scrollToAbout">About me</li>
+        <li :class="setClass" @click="scrollToProjects">Projects</li>
+        <li :class="setClass" @click="scrollToContact">Contact</li>
         <li @click.prevent="colorHandler()" class="color_changer mr-2 ml-1">
           <Triangle />
         </li>
       </ul>
     </nav>
+    <ul class="nav_link_mobile dp_flex">
+      <li :class="setClass" @click="scrollToAbout">About me</li>
+      <li :class="setClass" @click="scrollToProjects">Projects</li>
+      <li :class="setClass" @click="scrollToContact">Contact</li>
+    </ul>
   </div>
 </template>
 
@@ -40,6 +45,28 @@ export default {
     updateState() {
       this.setColor = this.$store.state.colorState;
     },
+
+    scrollToAbout() {
+      window.scroll({
+        top: 500,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+    scrollToProjects() {
+      window.scroll({
+        top: 1080,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
+    scrollToContact() {
+      window.scroll({
+        top: 2200,
+        left: 0,
+        behavior: "smooth",
+      });
+    },
   },
   computed: {
     setClass() {
@@ -47,7 +74,6 @@ export default {
     },
   },
   mounted() {
-    // console.log(this.$store.state.colorState);
     console.log(this.setColor, "setColor");
   },
 };
@@ -55,6 +81,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.nav_link_mobile {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  display: none;
+  z-index: 100;
+  & li {
+    border: 1px solid white;
+    color: #000;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    &:hover {
+      border-radius: 0;
+      color: #fff;
+    }
+  }
+}
 .nav_container {
   font-size: 16px !important;
   min-height: 100px;
@@ -66,6 +112,7 @@ export default {
 .navigation {
   width: 100%;
   justify-content: space-around;
+  position: relative;
 }
 .nav_links {
   align-items: center;
@@ -116,6 +163,6 @@ export default {
 }
 .red:hover {
   transition: 0.2s;
-  background: #C03B32; 
+  background: #c03b32;
 }
 </style>

@@ -5,7 +5,7 @@
     :itemsToShow="1"
     :centerMode="true"
     :autoPlay="true"
-    :playSpeed="6000"
+    :playSpeed="3000"
     :infiniteScroll="true"
     :wheelControl="false"
   >
@@ -232,7 +232,7 @@ export default {
 .txt {
   width: calc(100% - 1rem);
   padding: 1rem;
-  margin-left: 2rem;
+  // margin-left: 2rem;
   text-align: left;
   &_header {
     font-size: 2rem;
@@ -459,6 +459,7 @@ export default {
 .txt_content {
   line-height: 1.3em;
   text-align: justify;
+  margin:0;
 }
 </style>
 

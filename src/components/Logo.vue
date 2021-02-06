@@ -1,6 +1,8 @@
 <template>
   <div class="dp_flex">
+    <i id="hamburger" @click="navMenu" class="fas fa-hamburger fa-3x"></i>
     <svg
+      class="logo_mountain"
       width="60"
       height="57"
       viewBox="0 0 80 57"
@@ -17,8 +19,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    navMenu() {
+      document.querySelector(".nav_link_mobile").classList.toggle("show_menu");
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
+.show_menu {
+  display: flex !important;
+}
+.fa-hamburger {
+  display: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.85;
+    transform: scale(0.9);
+  }
+  &:active {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 </style>
